@@ -93,6 +93,6 @@ const DefaultConfig : MergedConfig = {
     "organization": true
   } ,
   "stale-bounty-time":"0d"
-} as const
+}
 
 export default DefaultConfig;
