@@ -186,12 +186,12 @@ export const MergedConfigSchema = Type.Object({
   "comment-incentives": Type.Boolean(),
   "assistive-pricing": Type.Boolean(),
   "max-concurrent-assigns": Type.Number(),
-  incentives: IncentivesSchema,
+  "incentives": IncentivesSchema,
   "default-labels": Type.Array(Type.String()),
   "register-wallet-with-verification": Type.Boolean(),
   "enable-access-control": AccessControlSchema,
   "stale-bounty-time": Type.String(),
 });
 
-type MergedConfig = Static<typeof MergedConfigSchema>;
-export default MergedConfig as const;
+export type MergedConfig = Static<typeof MergedConfigSchema>;
+
