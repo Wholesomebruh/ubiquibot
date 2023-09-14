@@ -1,6 +1,6 @@
 import  {MergedConfig}  from './src/types/config'
 
-const DefaultConfig : typeof MergedConfig = {
+const DefaultConfig : MergedConfig = {
   "evm-network-id": 100,
   "price-multiplier": 1,
   "issue-creator-multiplier": 2,
