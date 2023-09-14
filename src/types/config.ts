@@ -193,11 +193,4 @@ export const MergedConfigSchema = Type.Object({
   "stale-bounty-time": Type.String(),
 });
 
-
-type ReadonlyMergedConfig = {
-  readonly [K in keyof Static<typeof MergedConfigSchema>]: Static<typeof MergedConfigSchema>[K];
-};
-
-export const MergedConfigSchemaReadonly = MergedConfigSchema as typeof MergedConfigSchemaReadonly;
-
-export type MergedConfig = Static<typeof MergedConfigSchemaReadonly>;
+export type MergedConfig = Static<typeof MergedConfigSchema>;

@@ -11,7 +11,7 @@ const DefaultConfig : MergedConfig = {
   "comment-incentives": false,
   "register-wallet-with-verification": false,
   "promotion-comment": "\n<h6>If you enjoy the DevPool experience, please follow <a href='https://github.com/ubiquity'>Ubiquity on GitHub</a> and star <a href='https://github.com/ubiquity/devpool-directory'>this repo</a> to show your support. It helps a lot!</h6>",
-  "default-labels": [],
+  "default-labels": [] as const,
   "time-labels": [
     {
       "name": "Time: <1 Hour"
@@ -28,7 +28,7 @@ const DefaultConfig : MergedConfig = {
     {
       "name": "Time: <1 Month"
     }
-  ],
+  ] as const,
   "priority-labels": [
     {
       "name": "Priority: 1 (Normal)"
@@ -45,7 +45,7 @@ const DefaultConfig : MergedConfig = {
     {
       "name": "Priority: 5 (Emergency)"
     }
-  ],
+  ] as const,
   "command-settings": [
     {
       "name": "start",
@@ -79,7 +79,7 @@ const DefaultConfig : MergedConfig = {
       "name": "autopay",
       "enabled": false
     }
-  ],
+  ] as const,
   "incentives": {
     "comment": {
       "elements": {},
@@ -87,12 +87,12 @@ const DefaultConfig : MergedConfig = {
         "word": 0
       }
     }
-  },
+  } as const,
   "enable-access-control": {
     "label": false,
     "organization": true
-  },
+  } as const,
   "stale-bounty-time":"0d"
-}
+} as const
 
 export default DefaultConfig;
