@@ -193,5 +193,25 @@ export const MergedConfigSchema = Type.Object({
   "stale-bounty-time": Type.String(),
 });
 
-export type MergedConfig = Static<typeof MergedConfigSchema>;
+//export type MergedConfig = Static<typeof MergedConfigSchema>;
+export type MergedConfig={
+  "evm-network-id": number,
+  "price-multiplier": number,
+  "private-key-encrypted"?: string,
+  "issue-creator-multiplier": number,
+  "time-labels": ReadonlyArray<LabelItem>,
+  "priority-labels": ReadonlyArray<LabelItem>,
+  "payment-permit-max-price": number,
+  "command-settings": ReadonlyArray<CommandItem>,
+  "promotion-comment": string,
+  "disable-analytics":boolean,
+  "comment-incentives": boolean,
+  "assistive-pricing": boolean,
+  "max-concurrent-assigns": number,
+  "incentives": Incentives,
+  "default-labels": ReadonlyArray<string>,
+  "register-wallet-with-verification": boolean,
+  "enable-access-control": AccessControl,
+  "stale-bounty-time": string,
+}
 
