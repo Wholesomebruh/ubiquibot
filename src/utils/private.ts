@@ -1,6 +1,6 @@
 import _sodium from "libsodium-wrappers";
 import YAML from "yaml";
-import { DefaultedConfig, Payload } from "../types";
+import { DefaultedConfig,MergedConfig, Payload } from "../types";
 import { Context } from "probot";
 import merge from "lodash/merge";
 
