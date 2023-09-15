@@ -193,8 +193,8 @@ export const MergedConfigSchema = Type.Object({
   "stale-bounty-time": Type.String(),
 });
 
-//export type MergedConfig = Static<typeof MergedConfigSchema>;
-export type MergedConfig={
+export type MergedConfig = Static<typeof MergedConfigSchema>;
+export type DefaultedConfig={
   "evm-network-id": number,
   "price-multiplier": number,
   "private-key-encrypted"?: string,

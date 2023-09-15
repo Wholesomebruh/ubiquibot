@@ -1,6 +1,6 @@
 import _sodium from "libsodium-wrappers";
 import YAML from "yaml";
-import { MergedConfig, Payload } from "../types";
+import { DefaultedConfig, Payload } from "../types";
 import { Context } from "probot";
 import merge from "lodash/merge";
 
@@ -36,7 +36,7 @@ export const getConfigSuperset = async (context: Context, type: "org" | "repo", 
 export interface MergedConfigs {
   parsedRepo: WideRepoConfig | undefined;
   parsedOrg: WideOrgConfig | undefined;
-  parsedDefault: MergedConfig;
+  parsedDefault: DefaultedConfig;
 }
 
 export const parseYAML = (data?: string): WideConfig | undefined => {
@@ -126,11 +126,11 @@ export const getWideConfig = async (context: Context) => {
       throw new Error(`Invalid repo config: ${error}`);
     }
   }
-  const parsedDefault: MergedConfig = DefaultConfig;
+  const parsedDefault: DefaultedConfig = DefaultConfig;
   const privateKeyDecrypted = parsedOrg && parsedOrg[KEY_NAME] ? await getPrivateKey(parsedOrg[KEY_NAME]) : undefined;
 
   const configs: MergedConfigs = { parsedDefault, parsedOrg, parsedRepo };
-  const mergedConfigData: MergedConfig = mergeConfigs(configs);
+  const mergedConfigData: DefaultedConfig = mergeConfigs(configs);
 
   const configData = {
     networkId: mergedConfigData["evm-network-id"],
