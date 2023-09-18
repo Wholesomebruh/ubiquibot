@@ -1,4 +1,4 @@
-import  { MergedConfig }  from './src/types/config'
+import  { MergedConfig }  from '../types';
 
 export const DefaultConfig : MergedConfig = {
   "evm-network-id": 100,
